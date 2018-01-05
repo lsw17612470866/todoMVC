@@ -1,3 +1,41 @@
-<h1>
-  {{title}}
-</h1>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h2 class="title">{{title}}</h2>
+    <input type="checkbox"  name="all" id="all" (click)="all()" />
+    <input type="text" [(ngModel)]="newTodo" id="newTodo" placeholder="What needs to be done?" (keyup.enter)="save(newTodo);newTodo=''" #input />
+    <br/>
+  </div>
+  <div *ngIf="todoes.length!=0" >
+    <ul class="todo-list" >
+      <li  *ngFor="let todo of todoes; let i = index">
+          <div>
+            <input type="checkbox"  #xuan  [(checked)]="allChecked" (change)="aaa()" value="todo" />
+            <label [class.badge]="xuan.checked" >{{todo.todo}}</label>
+              <button class="destroy" (click)=delTodo(i) ></button>
+          </div>
+      </li>
+    </ul> 
+    <div>
+      <a>{{todoes.length }}items left</a>
+      <a href="#">All</a>
+      <a href="#">Active</a>
+      <a href="#">Completed</a>
+      <a  (click)="reset()" >Clear completed</a>
+    </div>
+  </div>
+</body>
+</html> -->
+    <app-main>加载main。。。</app-main>
+    <!-- <div>
+
+      <input type="text" /><button class="aaa">ddd</button>
+    </div> -->

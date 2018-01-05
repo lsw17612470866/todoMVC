@@ -1,0 +1,52 @@
+
+<body>
+    <section class="todoapp">
+            <header class="header">
+                <h1>todos</h1>
+                <input autofocus="" class="new-todo ng-pristine ng-valid ng-touched"
+                placeholder="What needs to be done?" 
+                [(ngModel)]="newTodo" (keyup.enter)="save(newTodo);newTodo=''" 
+                #input >
+            </header>
+            <section class="main">
+                <input class="toggle-all" type="checkbox" [checked]="todosLength==0" (click)="all()"  >
+                <ul class="todo-list" >
+                     <li [class.editing]="todo.shaungJi"  *ngFor="let todo of todoes; let i = index"   >
+                        <div class="view" *ngIf=" aaa=='all'|| todo.status == aaa"  >
+                            <input class="toggle" type="checkbox"
+                            #xuan  [checked]="todo.checked"  (change)="changeStatus(todo)" >
+                            <label [class.badge]="xuan.checked" (dblclick)="shuru(i)" >{{todo.todo}}</label>
+                            <!-- <button 
+                            [class.destroy]="!isNone" (click)=delTodo(i)></button> -->
+                            <button class="destroy" (click)=delTodo(i)></button>
+                        </div>
+                        <input class="edit" *ngIf="todo.shaungJi" [(ngModel)]="todo.todo" value="{{todo.todo}}" 
+                        (keyup.enter)="shuchu(i)">
+                    </li>
+                </ul>
+            </section>
+             
+            <footer class="footer" *ngIf="todoes.length!= 0" >
+                <span class="todo-count" ><strong></strong> {{todosLength}} items left</span>
+                <ul id="filters">
+                        <li>
+                            <a [class.selected]="aaa=='all'" (click)="All()" href="#/" >All</a>
+                        </li>
+                        <li>
+                            <a [class.selected]="aaa=='active'" (click)="active()" href="#/active">Active</a>
+                        </li>
+                        <li>
+                            <a [class.selected]="aaa=='completed'" (click)="completed()" href="#/completed">Completed</a>
+                        </li>
+                    </ul>
+                <div *ngIf="todoes.length-todosLength!=0">
+                    <button class="clear-completed"
+                    (click)="reset()" >Clear completed</button>
+    
+                </div>
+            </footer>
+        </section>
+</body>
+
+<!-- <p>{{todoes[0].todo}}</p> -->
+<!-- <app-base>加载base。。。</app-base> -->
